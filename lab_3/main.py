@@ -236,8 +236,7 @@ class LanguageDetector:
                 text_storage.fill_n_grams(encoded_text)
                 text_storage.calculate_n_grams_frequencies()
                 lang_distance[language_name].append(
-                    self._calculate_distance(n_gram_trie.top_n_grams(self.top_k),
-                                             text_storage.top_n_grams(self.top_k)))
+                    self._calculate_distance(n_gram_trie.top_n_grams(self.top_k), text_storage.top_n_grams(self.top_k)))
 
             lang_distance[language_name] = sum(lang_distance[language_name]) / len(lang_distance[language_name])
 
